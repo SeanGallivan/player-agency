@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+        }
+        .sidebar {
+            width: 280px;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .sidebar .nav-link {
+            color: #333;
+        }
+        .sidebar .nav-link:hover {
+            color: #0d6efd;
+        }
+        .sidebar .nav-link.active {
+            font-weight: bold;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .btn-toggle {
+            display: inline-flex;
+            align-items: center;
+            padding: .25rem .5rem;
+            font-weight: 600;
+            background-color: transparent;
+            border: 0;
+        }
+        .btn-toggle:hover,
+        .btn-toggle:focus {
+            color: rgba(0, 0, 0, .85);
+            background-color: #d2f4ea;
+        }
+        .btn-toggle::before {
+            width: 1.25em;
+            line-height: 0;
+            content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+            transition: transform .35s ease;
+            transform-origin: .5em 50%;
+        }
+        .btn-toggle[aria-expanded="true"]::before {
+            transform: rotate(90deg);
+        }
+        .btn-toggle-nav a {
+            display: inline-flex;
+            padding: .1875rem .5rem;
+            margin-top: .125rem;
+            margin-left: 1.25rem;
+            text-decoration: none;
+        }
+        .btn-toggle-nav a:hover,
+        .btn-toggle-nav a:focus {
+            background-color: #d2f4ea;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h5 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+        </h5>
+        <ul class="nav flex-column mb-2">
+            <li class="nav-item">
+                <a class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                    Party
+                </a>
+                <div class="collapse" id="home-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class="link-dark rounded">Face</a></li>
+                        <li><a href="#" class="link-dark rounded">Fighter</a></li>
+                        <li><a href="#" class="link-dark rounded">caster</a></li>
+                        <li><a href="#" class="link-dark rounded">Tank/Healer</a></li>
+                        <li><a href="#" class="link-dark rounded">Utility</a></li>
+                        <li><a href="#" class="link-dark rounded">Comedian</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#factions-collapse" aria-expanded="false">
+                    Factions
+                </a>
+                <div class="collapse" id="factions-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class="link-dark rounded">World-threat</a></li>
+                        <li><a href="#" class="link-dark rounded">Region 1</a></li>
+                        <li><a href="#" class="link-dark rounded">Region 2</a></li>
+                        <li><a href="#" class="link-dark rounded">Region 3</a></li>
+                        <li><a href="#" class="link-dark rounded">City 1</a></li>
+                        <li><a href="#" class="link-dark rounded">City 2</a></li>
+                        <li><a href="#" class="link-dark rounded">Group 1</a></li>
+                        <li><a href="#" class="link-dark rounded">Group 2</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h1>Player Agency Prototype</h1>
+        <p class="lead">This is the working verison of Player Agency.</p>
+        <p>It is early, but the vision is that this page will contain inforamtion about your party and campaign on the left, and location, encounter, and npc content personalized to your party on the right.  The party and campaign information will be pre-filled and GMs can use it out-of-the-box.  However, if they want to personalize it they cane</p>
+    </div>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
